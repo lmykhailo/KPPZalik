@@ -1,0 +1,27 @@
+<form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+        <ion-label>Function Type</ion-label>
+        <ion-select formControlName="functionType">
+            <ion-select-option value="sin">sin(x)</ion-select-option>
+            <ion-select-option value="tan">tan(x)</ion-select-option>
+            <ion-select-option value="power">x^n</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>X</ion-label>
+        <ion-input type="number" formControlName="x"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>H</ion-label>
+        <ion-input type="number" formControlName="h"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="inputForm.get('functionType')?.value === 'power'">
+        <ion-label>N</ion-label>
+        <ion-input type="number" formControlName="n"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="inputForm.invalid">Calculate</ion-button>
+</form>

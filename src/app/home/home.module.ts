@@ -3,8 +3,11 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { HomePageRoutingModule } from './home-routing.module';
+import { InputFormComponent } from '../input-form/input-form.component';
+import { MyHeaderModule } from '../my-header/my-header.component.module';
+import { ResultComponent } from '../result/result.component';
 
 
 @NgModule({
@@ -12,8 +15,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    ReactiveFormsModule,MyHeaderModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage,InputFormComponent,ResultComponent]
 })
 export class HomePageModule {}
